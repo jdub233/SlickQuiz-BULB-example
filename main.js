@@ -16,13 +16,3 @@ BULB.singleQuestionOptions = {
         }
     },
 }
-
-$(function () {
-    var question1 = Object.assign({}, BULB.singleQuestionOptions, {json: question1JSON});
-    $('#question1').slickQuiz(question1);
-});
-
-$(function () {
-    var question2 = Object.assign({}, BULB.singleQuestionOptions, {json: question2JSON});
-    $('#question2').slickQuiz(question2);
-});

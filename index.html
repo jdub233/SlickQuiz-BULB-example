@@ -8,9 +8,37 @@
         <link href="lib/SlickQuiz/css/reset.css" media="screen" rel="stylesheet" type="text/css">
         <link href="lib/SlickQuiz/css/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">
         <link href="lib/SlickQuiz/css/master.css" media="screen" rel="stylesheet" type="text/css">
+
+        <script src="lib/SlickQuiz/js/jquery.js"></script>
+        <script src="lib/SlickQuiz/js/slickQuiz.js"></script>
+        <script src="main.js"></script>
     </head>
 
     <body>
+    <script type="text/javascript">
+        var question1JSON = {
+            "info": {
+                "name":    "True False question",
+                "main":    "",
+                "results": "<h5>Learn More</h5><p>Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus.</p>",
+            },
+            "questions": [
+                {
+                    "q": "Is Earth bigger than a basketball?",
+                    "a": [
+                        {"option": "Yes",    "correct": true},
+                        {"option": "No",     "correct": false},
+                    ],
+                    "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+                    "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>",
+                },
+            ]
+        };
+        $(document).ready(function(){
+            var question1 = Object.assign({}, BULB.singleQuestionOptions, {json: question1JSON});
+            $('#question1').slickQuiz(question1);
+        });
+    </script>
     <div id="question1">
         <h1 class="quizName"><!-- where the quiz name goes --></h1>
 
@@ -34,6 +62,32 @@
 
     <div><hr/></div>
 
+    <script type="text/javascript">
+        var question2JSON = {
+            "info": {
+                "name":    "Multiple choice question",
+                "main":    "",
+                "results": "<h5>Learn More</h5><p>Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus.</p>",
+            },
+            "questions": [
+                {
+                    "q": "What number is the letter A in the English alphabet?",
+                    "a": [
+                        {"option": "8",      "correct": false},
+                        {"option": "14",     "correct": false},
+                        {"option": "1",      "correct": true},
+                        {"option": "23",     "correct": false},
+                    ],
+                    "correct": "<p><span>That's right!</span> The letter A is the first letter in the alphabet!</p>",
+                    "incorrect": "<p><span>Uhh no.</span> It's the first letter of the alphabet</p>",
+                },
+            ]
+        };
+        $(document).ready(function(){
+            var question2 = Object.assign({}, BULB.singleQuestionOptions, {json: question2JSON});
+            $('#question2').slickQuiz(question2);
+        });
+    </script>
     <div id="question2">
         <h1 class="quizName"><!-- where the quiz name goes --></h1>
 
@@ -55,9 +109,5 @@
         </div>
     </div>
 
-    <script src="lib/SlickQuiz/js/jquery.js"></script>
-    <script src="lib/SlickQuiz/js/slickQuiz.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
     </body>
 </html>
